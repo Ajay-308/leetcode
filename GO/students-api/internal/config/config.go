@@ -13,9 +13,9 @@ type HTTPServer struct {
 }
 
 type Config struct {
-	Env          string `yaml:"env" env:"ENV" env-default:"production" env-required:"true"`
-	Storage_path string `yaml:"storage_path" env-required:"true"`
-	HTTPServer   `yaml:"http_server"`
+	Env          string     `yaml:"env" env:"ENV" env-default:"production" env-required:"true"`
+	Storage_path string     `yaml:"storage_path" env-required:"true"`
+	HTTPServer   HTTPServer `yaml:"http_server"`
 }
 
 func MustLoad() *Config {
